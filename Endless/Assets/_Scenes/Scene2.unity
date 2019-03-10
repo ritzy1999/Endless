@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -288,7 +288,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hol: {fileID: 2800395375278371252, guid: 2500526a8e7438146b7693a57350728a, type: 3}
-  gameover: 0
 --- !u!114 &213918213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -298,9 +297,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 213918206}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d2f50a8e0bb841a5aaa90ae55db8849, type: 3}
+  m_Script: {fileID: 11500000, guid: dd927ecc96953c345ac8391852b10a29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _mat: {fileID: 2100000, guid: 1b440de8ea2d7e14ea3cd5e36323ddb6, type: 2}
 --- !u!1 &1081480219
 GameObject:
   m_ObjectHideFlags: 0
@@ -406,7 +406,7 @@ GameObject:
   - component: {fileID: 1255895568}
   - component: {fileID: 1255895567}
   m_Layer: 0
-  m_Name: Plane (4)
+  m_Name: tank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -519,7 +519,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 43c4762178b1755449c27890b5e4fba0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -775,7 +775,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 30abebfd9bf1c49d8a2d26e61e66bc15, type: 2}
+  - {fileID: 2100000, guid: 742317bab62a60b4fbea2a2d917c4559, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

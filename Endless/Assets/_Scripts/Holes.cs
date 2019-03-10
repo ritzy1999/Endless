@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class holes : MonoBehaviour
+public class Holes : MonoBehaviour
 {
     public GameObject hol;
     int j = 0;
-    public bool gameover = false;
 
     void Start()
     {
@@ -20,8 +19,9 @@ public class holes : MonoBehaviour
         {
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out hit , 100))
+            if (Physics.Raycast(ray, out hit , 500))
             {
+                Debug.Log(hit.transform.name);
                 Debug.DrawRay(new Vector3(this.transform.position.x, 0, this.transform.position.z), this.transform.forward, Color.black);
                 if (hit.transform.tag == "crack")
                 {
@@ -41,14 +41,13 @@ public class holes : MonoBehaviour
                     j--;
             }*/
         }
-        if (j >= 7)
+        if (j > 7)
             Gameover();
+        
     }
 
     IEnumerator GenerateHoles()
     {
-        if (j < 6)
-        {
             Instantiate(hol, new Vector3(Random.Range(-12, 12), Random.Range(-4, 5), 1.5f), this.transform.rotation);
             j++;
             
@@ -58,16 +57,13 @@ public class holes : MonoBehaviour
             Instantiate(hol, new Vector3(Random.Range(-12, 12), Random.Range(-4, 5), 1.5f), this.transform.rotation);
             j++;
             
-
-            
-
             yield return new WaitForSeconds(Random.Range(2.2f, 4.4f));
             StartCoroutine(GenerateHoles());
-        }
     }
 
     public void Gameover()
     {
         Debug.Log("GAME OVER");
+       // Time.timeScale = 0;
     }
 }
