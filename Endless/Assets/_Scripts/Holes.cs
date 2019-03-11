@@ -53,12 +53,12 @@ public class Holes : MonoBehaviour
             j++;
             
             
-            yield return new WaitForSeconds(Random.Range(0.5f, 2.0f));
+            yield return new WaitForSeconds(Random.Range(0.5f, 1.5f));
 
             Instantiate(hol, new Vector3(Random.Range(-12, 12), Random.Range(-4, 5), 1.5f), this.transform.rotation);
             j++;
             
-            yield return new WaitForSeconds(Random.Range(2.2f, 4.4f));
+            yield return new WaitForSeconds(Random.Range(2.2f, 3.7f));
             StartCoroutine(GenerateHoles());
     }
 

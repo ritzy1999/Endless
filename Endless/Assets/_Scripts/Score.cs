@@ -22,7 +22,7 @@ public class Score : MonoBehaviour
     void Update()
     {
 
-        Hs.text = "HighScore : " + Hiscore.ToString();
+       // Hs.text = "HighScore : " + Hiscore.ToString();
 
         if (Hiscore < score)
         {
