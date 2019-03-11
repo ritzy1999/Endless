@@ -7,6 +7,7 @@ public class Holes : MonoBehaviour
     public static Holes holes;
     public GameObject hol;
     public int j = 0;
+    public bool game = true;
 
     void Start()
     {
@@ -45,29 +46,36 @@ public class Holes : MonoBehaviour
             }*/
         }
         if (j > 7)
+        {
+            game = false;
             Gameover();
+        }
+            
         
     }
 
     IEnumerator GenerateHoles()
     {
+        if(j <= 7)
+        {
             Instantiate(hol, new Vector3(Random.Range(-12, 12), Random.Range(-4, 5), 1.5f), this.transform.rotation);
             j++;
-            
-            
+
+
             yield return new WaitForSeconds(Random.Range(0.5f, 1.5f));
 
             Instantiate(hol, new Vector3(Random.Range(-12, 12), Random.Range(-4, 5), 1.5f), this.transform.rotation);
             j++;
-            
+
             yield return new WaitForSeconds(Random.Range(2.2f, 3.7f));
             StartCoroutine(GenerateHoles());
+        }
+            
     }
 
     public void Gameover()
     {
-        Debug.Log("GAME OVER");
-        Time.timeScale = 0;
+        PanelManager.PM.GameOver();
        // Time.timeScale = 0;
     }
 }
