@@ -27,6 +27,7 @@ public class Holes : MonoBehaviour
                 {
                     Destroy(hit.transform.gameObject);
                     j--;
+                    Score.Instance.Scoring();
                 }
             }
 
