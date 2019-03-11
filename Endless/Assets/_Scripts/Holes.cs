@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class Holes : MonoBehaviour
 {
+    public static Holes holes;
     public GameObject hol;
-    int j = 0;
+    public int j = 0;
 
     void Start()
     {
+        holes = this;
         StartCoroutine(GenerateHoles());
     }
 
@@ -65,6 +67,7 @@ public class Holes : MonoBehaviour
     public void Gameover()
     {
         Debug.Log("GAME OVER");
+        Time.timeScale = 0;
        // Time.timeScale = 0;
     }
 }

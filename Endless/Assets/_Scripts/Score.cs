@@ -10,6 +10,8 @@ public class Score : MonoBehaviour
     public Text text;
     public Text Hs;
     public int Hiscore;
+    public Slider slider;
+    public double i;
 
     // Use this for initialization
     void Start()
@@ -21,8 +23,8 @@ public class Score : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-       // Hs.text = "HighScore : " + Hiscore.ToString();
+        slider.value = 7 - Holes.holes.j;
+        Hs.text = "HighScore : " + Hiscore.ToString();
 
         if (Hiscore < score)
         {
@@ -32,16 +34,50 @@ public class Score : MonoBehaviour
     }
     public void Scoring()
     {
-        for(double i=score; i<score+10.1; i+=0.0001)
-        {
-            text.text = "Score : " + i.ToString();
-        }
+        i = score;
+        StartCoroutine(Scoreview());
+        
         score += 10; ;
-        text.text = "Score : " + score.ToString();
     }
     public void ResetScore()
     {
         score = 0;
+    }
+    IEnumerator Scoreview()
+    {
+        yield return new WaitForSeconds(0.1f);
+        text.text = "Score : " + i.ToString();
+        i = i + 1;
+        yield return new WaitForSeconds(0.1f);
+        text.text = "Score : " + i.ToString();
+        i = i + 1;
+        yield return new WaitForSeconds(0.1f);
+        text.text = "Score : " + i.ToString();
+        i = i + 1;
+        yield return new WaitForSeconds(0.1f);
+        text.text = "Score : " + i.ToString();
+        i = i + 1;
+        yield return new WaitForSeconds(0.1f);
+        text.text = "Score : " + i.ToString();
+        i = i + 1;
+        yield return new WaitForSeconds(0.1f);
+        text.text = "Score : " + i.ToString();
+        i = i + 1;
+        yield return new WaitForSeconds(0.1f);
+        text.text = "Score : " + i.ToString();
+        i = i + 1;
+        yield return new WaitForSeconds(0.1f);
+        text.text = "Score : " + i.ToString();
+        i = i + 1;
+        yield return new WaitForSeconds(0.1f);
+        text.text = "Score : " + i.ToString();
+        i = i + 1;
+        yield return new WaitForSeconds(0.1f);
+        text.text = "Score : " + i.ToString();
+        i = i + 1;
+        yield return new WaitForSeconds(0.1f);
+        text.text = "Score : " + i.ToString();
+        i = i + 1;
     }
 
 }
